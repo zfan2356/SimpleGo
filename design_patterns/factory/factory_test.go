@@ -1,13 +1,13 @@
-package main
+package factory
 
 import (
-	"design_patterns/factory"
 	"fmt"
+	"testing"
 )
 
-func main() {
-	AdidasFactory, _ := factory.GetFactory("adidas")
-	NikeFactory, _ := factory.GetFactory("nike")
+func Test01(t *testing.T) {
+	AdidasFactory, _ := GetFactory("adidas")
+	NikeFactory, _ := GetFactory("nike")
 
 	as1 := AdidasFactory.MakeShoes(10)
 	as2 := AdidasFactory.MakeShirt("XXL", "black")
@@ -16,5 +16,4 @@ func main() {
 	ns2 := NikeFactory.MakeShirt("XXXL", "green")
 
 	fmt.Println(as1, as2, ns1, ns2)
-
 }
